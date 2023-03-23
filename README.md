@@ -1,4 +1,6 @@
-# QQ-gpt-box
+# QQ-ChatBot based on ChatGPT & ChatGLM
+    这是一个用于构建QQ版ChatGPT的项目，当前项目需要使用你的openai账号生成APIKEY，以及一点点魔法，简单实现QQ自动抓取信息，以及用Chat机器人回复的小程序。
+
 
 # 配置go-cqhttp
 详细教程见[go-cqhttp教程](https://docs.go-cqhttp.org/guide/quick_start.html#%E5%9F%BA%E7%A1%80%E6%95%99%E7%A8%8B)
@@ -8,4 +10,6 @@
 # 运行项目
 - python server.py 运行项目即可
 - 项目listener会自动监听go-cqhttp程序，若长时间未收到会重启
+
+
 
