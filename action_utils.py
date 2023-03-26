@@ -1,6 +1,6 @@
 
-from go_cqhttp_api import *
-
+import go_cqhttp_api
+import settings
 
 action_status = {}
 
@@ -22,13 +22,23 @@ def action_follow_rec(data):
 
         if at_me(message) and group_id in settings.group_list:
             # 群里被@到的操作
+
+            # 获取chatgpt返回
+            response = ''
+            # 发送到该群
+            go_cqhttp_api.send_group_msg(group_id, response)
             pass
 
     elif message_type == 'private':
         if data["sender"]["user_id"] in settings.private_list:
+            user_id = data['sender']['user_id']
             nickname = data['sender']['nickname']
             msg = data['message']
-            report_master(None, nickname, msg)
+
+            # 获取chatgpt返回
+            response = ''
+            # 发送给该用户
+            go_cqhttp_api.send_private_msg(user_id, response)
             pass
 
 

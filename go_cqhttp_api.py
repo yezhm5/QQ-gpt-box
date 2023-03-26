@@ -9,20 +9,22 @@ def restart_cqhttp():
 
 def send_private_msg(user_id, msg):
     data = {"user_id": user_id, "message": msg}
-    ans=  requests.post("http://127.0.0.1:5710/send_private_msg", data=data)
+    ans=  requests.post(settings.base_url + "/send_private_msg", data=data)
 
 
 def send_group_msg(group_id, msg):
     data = {"group_id": group_id, "message": msg}
-    ans = requests.post("http://127.0.0.1:5710/send_group_msg", data=data)
+    ans = requests.post(settings.base_url + "/send_group_msg", data=data)
     # print(ans.json())
 
 
-def send_setu_2_group(group_id, pic_path):
+def send_pic_2_group(group_id, pic_path):
+    # 发送本地图片
     msg = f"[CQ:image,file=file:///{pic_path}]"
     send_group_msg(group_id, msg)
 
-def send_setu_2_group2(group_id, url):
+def send_pic_2_group2(group_id, url):
+    # 发送网络图片
     msg = f"[CQ:image,url={url}]"
     send_group_msg(group_id, msg)
 
@@ -56,12 +58,12 @@ def get_qq_headimg(user_id):
         f.write(r.content)
     return save_path
 
-def get_msg(message_id = 1931600985):
+def get_msg(message_id):
     url = settings.base_url + '/get_msg'
     r = requests.post(url, data={'message_id': message_id})
     print(r.json())
 
-def get_group_member_info(group_id = 260119646, user_id = 43312024, no_cache = True):
+def get_group_member_info(group_id, user_id, no_cache = True):
     url = settings.base_url + '/get_group_member_info'
     r = requests.post(url, data={'group_id': group_id, 'user_id': user_id, 'no_cache':no_cache})
     print(r.json())
@@ -69,11 +71,4 @@ def get_group_member_info(group_id = 260119646, user_id = 43312024, no_cache = T
 
 
 if __name__ == '__main__':
-    # send_setu_2_group(1004183903, r'C:/Users/43312/Pictures/timg1.jpg')
-    # send_setu_2_group2(1004183903, "http://img95.699pic.com/photo/40094/7630.jpg_wh300.jpg")
-    # send_private_msg(43312024, '主人你好')
-    # data = get_group_info(15938891)
-    # print(data)
-    ans = restart_cqhttp()
-    print(ans)
-    # ans = get_group_member_info(user_id=1792312584)
+    pass
