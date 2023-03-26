@@ -71,7 +71,7 @@ def get_group_member_info(group_id = 260119646, user_id = 43312024, no_cache = T
 if __name__ == '__main__':
     # send_setu_2_group(1004183903, r'C:/Users/43312/Pictures/timg1.jpg')
     # send_setu_2_group2(1004183903, "http://img95.699pic.com/photo/40094/7630.jpg_wh300.jpg")
-    # send_private_msg(43312024, '主人你好')
+    send_private_msg(43312024, '主人你好')
     # data = get_group_info(15938891)
     # print(data)
     ans = restart_cqhttp()
