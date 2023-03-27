@@ -1,6 +1,8 @@
 
 import go_cqhttp_api
 import settings
+from ChatGPT_chat_demo import ChatGPT_use,QQ_box
+from apikey import api_key
 
 action_status = {}
 
@@ -14,6 +16,7 @@ def at_me(message):
 
 
 def action_follow_rec(data):
+    Chatbot = ChatGPT_use(api_key=api_key)
     message_type = data.get('message_type', None)
     if message_type == 'group':
         sender_info = data.get('sender', None)
@@ -24,7 +27,7 @@ def action_follow_rec(data):
             # 群里被@到的操作
 
             # 获取chatgpt返回
-            response = ''
+            response = ""
             # 发送到该群
             go_cqhttp_api.send_group_msg(group_id, response)
             pass
@@ -36,7 +39,7 @@ def action_follow_rec(data):
             msg = data['message']
 
             # 获取chatgpt返回
-            response = ''
+            response = QQ_box(Chatbot,msg)
             # 发送给该用户
             go_cqhttp_api.send_private_msg(user_id, response)
             pass
