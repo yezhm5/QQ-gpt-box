@@ -77,5 +77,8 @@ def QQ_box(self,prompt):
 from apikey import api_key
 Chat_GPT = ChatGPT_use(api_key=api_key)
 #test
-ChatBOT(Chat_GPT)    
+ 
+response = QQ_box(Chat_GPT,"请问什么是酱油")
+print(response)
 
+ChatBOT(Chat_GPT)   

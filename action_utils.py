@@ -1,7 +1,7 @@
 
 import go_cqhttp_api
 import settings
-from ChatGPT_chat_demo import ChatGPT_use,QQ_box
+from ChatGPT_chat_demo import ChatGPT_use,Chat_GPT,QQ_box
 from apikey import api_key
 
 action_status = {}
@@ -39,7 +39,7 @@ def action_follow_rec(data):
             msg = data['message']
 
             # 获取chatgpt返回
-            response = QQ_box(Chatbot,msg)
+            response = QQ_box(Chat_GPT,msg)
             # 发送给该用户
             go_cqhttp_api.send_private_msg(user_id, response)
             pass
