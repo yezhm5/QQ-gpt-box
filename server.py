@@ -27,7 +27,5 @@ def post_data():
 
 if __name__ == '__main__':
     gpt_api.run(host = '127.0.0.1', port = 8080)
-    # r = requests.post('http://127.0.0.1:5701', data = {"msg":1, "group_id":2})
-    # print(r.content)
 
 

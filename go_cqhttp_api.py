@@ -78,6 +78,4 @@ def get_group_member_info(group_id, user_id, no_cache = True):
 
 
 if __name__ == '__main__':
-    # send_private_msg(43312024, '你好')
-    send_gpt_response(43312024, "你好")
     pass
