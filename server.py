@@ -16,13 +16,13 @@ def post_data():
             return b'', 200
         else:
             listener.update_last_time()
+            # add_threading_pool(action_utils.action_follow_rec, data)
             action_utils.action_follow_rec(data)
             print(data)
         return b'', 200
     except Exception as e:
         print("error", str(e))
         return b'', 200
-
 
 
 if __name__ == '__main__':

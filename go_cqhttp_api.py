@@ -7,13 +7,6 @@ def restart_cqhttp():
     ans = requests.get(url, data={'delay':2000})
     return ans
 
-def send_gpt_response(user_id, msg):
-    data = {"user_id": user_id, "message": msg}
-    session = requests.Session()
-    session.trust_env = False
-    session.post("/http://127.0.0.1:8080/gpt_response", data=data)
-
-
 def send_private_msg(user_id, msg):
     data = {"user_id": user_id, "message": msg}
     # print(settings.base_url + "/send_private_msg")
@@ -85,5 +78,6 @@ def get_group_member_info(group_id, user_id, no_cache = True):
 
 
 if __name__ == '__main__':
-    send_private_msg(43312024, '你好')
+    # send_private_msg(43312024, '你好')
+    send_gpt_response(43312024, "你好")
     pass

@@ -17,8 +17,6 @@ def at_me(message):
 
 def send_gpt_response(user_id, msg):
     # 获取chatgpt返回
-    import time
-    time.sleep(10)
     response = QQ_box(Chatbot, msg)
     # 发送给该用户
     go_cqhttp_api.send_private_msg(user_id, response)
@@ -44,16 +42,12 @@ def action_follow_rec(data):
             user_id = data['sender']['user_id']
             nickname = data['sender']['nickname']
             msg = data['message']
-            # 获取chatgpt返回
 
-            response = QQ_box(Chatbot,msg)
-            # 发送给该用户，用线程做，避免go-cqhttp重复报告
+            # 发送给该用户，用线程做，避免go-cqhttp以为断连重复报告
             t1 = threading.Thread(target=send_gpt_response, args=(user_id, msg))
             t1.start()
-            # loop = asyncio.new_event_loop()
-            # task = loop.create_task(send_gpt_response(user_id, msg))
-            print("结束了")
             return
+
 
 
 

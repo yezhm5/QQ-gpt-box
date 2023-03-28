@@ -58,7 +58,6 @@ def QQ_box(self,prompt):
 
     self.messages.append({"role": "user", "content": f"Q:{prompt}"})
     response_content = self.ask_chat_gpt()
-    response_content = "123加油"
     self.messages.append({"role": "assistant", "content": f"{response_content}"})
     if len(self.messages)>10:
         self.meassages = [
@@ -74,4 +73,3 @@ from apikey import api_key
 # Chat_GPT = ChatGPT_use(api_key=api_key)
 # test
 # ChatBOT(Chat_GPT)
-
