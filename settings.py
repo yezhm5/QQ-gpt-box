@@ -14,6 +14,6 @@ myqq = 1792312584       # 小QQ
 # 需要回应的群组
 group_list = []
 # 需要回应的人
-private_list = []
+private_list = [43312024]
 
 

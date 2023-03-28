@@ -4,9 +4,9 @@ import requests
 import action_utils
 import listener
 
-setu_api = Flask(__name__)
+gpt_api = Flask(__name__)
 
-@setu_api.route('/', methods = ['POST'])
+@gpt_api.route('/', methods = ['POST'])
 def post_data():
     try:
         data = dict(json.loads(request.data.decode()))
@@ -23,8 +23,10 @@ def post_data():
         print("error", str(e))
         return b'', 200
 
+
+
 if __name__ == '__main__':
-    setu_api.run(host = '127.0.0.1', port = '8080')
+    gpt_api.run(host = '127.0.0.1', port = 8080)
     # r = requests.post('http://127.0.0.1:5701', data = {"msg":1, "group_id":2})
     # print(r.content)
 

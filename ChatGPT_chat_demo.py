@@ -1,13 +1,8 @@
 # Note: you need to be using OpenAI Python v0.27.0 for the code below to work
 from typing import List
-import json
-import sys
 import time
-import openai
 
 import openai
-import requests
-from requests.structures import CaseInsensitiveDict
 import os
 
 
@@ -63,19 +58,20 @@ def QQ_box(self,prompt):
 
     self.messages.append({"role": "user", "content": f"Q:{prompt}"})
     response_content = self.ask_chat_gpt()
+    response_content = "123加油"
     self.messages.append({"role": "assistant", "content": f"{response_content}"})
     if len(self.messages)>10:
         self.meassages = [
-                # {"role": "system", "content": "You are a helpful assistant."},               
+                # {"role": "system", "content": "You are a helpful assistant."},
                 {"role":"system", "content": "你是一个什么问题都会的，什么难题都能解决的人类助手。"},
                 {"role": "user", "content": "你好,可以简单介绍一下你的功能和作用吗？接下来我要随意问你一些问题，你会给出合理精确有用的解答。"},
-            ]  
+            ]
     return response_content
 
 
 # api_key = "sk-M...."
 from apikey import api_key
-Chat_GPT = ChatGPT_use(api_key=api_key)
-#test
-ChatBOT(Chat_GPT)    
+# Chat_GPT = ChatGPT_use(api_key=api_key)
+# test
+# ChatBOT(Chat_GPT)
 
