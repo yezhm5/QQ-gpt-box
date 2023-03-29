@@ -17,4 +17,4 @@
 
 
 # 运行截图
-![GPT回复图片](img\\001.jpg "gpt_chat")
+![GPT回复图片](img/001.jpg "gpt_chat")
