@@ -1,5 +1,6 @@
 # QQ-ChatBot based on ChatGPT & ChatGLM
     这是一个用于构建QQ版ChatGPT的项目，当前项目需要使用你的openai账号生成APIKEY，以及一点点魔法，简单实现QQ自动抓取信息，以及用Chat机器人回复的小程序。
+    此版本为linux分支，若要查看windows版本，请转到分支 QQ_bot_windows_v1.0
 
 
 # 配置go-cqhttp
